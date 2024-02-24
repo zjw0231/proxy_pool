@@ -25,8 +25,9 @@ HEADER = {'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:34.0) Gecko/2010
           'Connection': 'keep-alive',
           'Accept-Language': 'zh-CN,zh;q=0.8'}
 
-IP_REGEX = re.compile(r"(.*:.*@)?\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}:\d{1,5}")
-
+#IP_REGEX = re.compile(r"(.*:.*@)?\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}:\d{1,5}")
+#调整以支持域名，而不仅仅是IP地址
+IP_REGEX = re.compile(r"(.*:.*@)?[\w.-]+:\d{1,5}")
 
 class ProxyValidator(withMetaclass(Singleton)):
     pre_validator = []
